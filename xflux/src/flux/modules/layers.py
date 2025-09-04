@@ -293,8 +293,8 @@ class DoubleStreamBlock(nn.Module):
     def get_processor(self):
         return self.processor
 
-    def forward(self, img: Tensor, txt: Tensor, vec: Tensor, pe: Tensor) -> tuple[Tensor, Tensor]:
-      return self.processor(self, img, txt, vec, pe)
+    def forward(self, img: Tensor, txt: Tensor, vec: Tensor, pe: Tensor, **attention_kwargs) -> tuple[Tensor, Tensor]:
+        return self.processor(self, img, txt, vec, pe)
 
 class SingleStreamBlock(nn.Module):
     """
